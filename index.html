@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src='xlsx.full.min.js'></script>
+  </head>
+
+
+
+  <body>
+    <form id="postForm" action='' method="post">
+      <p>Select weight of your package:</p>
+      <select id='selectWeightElem' >
+        <option selected>---</option>
+      </select>
+      <p>From:</p>
+      <select id='selectFromElem' >
+        <option selected>---</option>
+      </select>
+      <p>To:</p>
+      <select id='selectWhereElem' >
+        <option selected>---</option>
+      </select>
+
+      <button type="button" name="button" id='switchButton'>Switch directions</button>
+      <hr/>
+      <button type="button" name="button" id='submitButton'>Calculate your price</button>
+    </form>
+    <p id='deliveryPrice'></p>
+
+
+
+    <script src="script.js" charset="utf-8"></script>
+  </body>
+</html>
