@@ -1,7 +1,7 @@
 const selectWeightElem = document.getElementById('selectWeightElem')
 const selectWhereElem = document.getElementById('selectWhereElem')
 const selectFromElem = document.getElementById('selectFromElem')
-url = 'http://localhost:3000'
+url = 'http://localhost:8000'
 document.getElementById('switchButton').addEventListener('click',switchDirections,false);
 document.getElementById('submitButton').addEventListener('click',submitData,false);
 selectWhereElem.addEventListener('change', validateSelects, false);

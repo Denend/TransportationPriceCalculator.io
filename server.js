@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 8000;
 const fs = require('fs')
 const XLSX = require('xlsx');
 var bodyParser  =  require("body-parser");
@@ -8,7 +8,6 @@ var bodyParser  =  require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const data = fs.readFileSync('Case_study.csv','utf-8');
 
 //PARASING FILE
 var workbook = XLSX.readFile('Case_study_excel_format.xlsx');
@@ -53,8 +52,8 @@ app.get('/weightOptions', (req, res) => {
 
 app.post('/post_data', (req, res) => {
   let query=req.body;
-  whereToGo = query.whereToGo;
-  weightIndex = query.weightIndex;
+  let whereToGo = query.whereToGo;
+  let weightIndex = query.weightIndex;
   console.log(whereToGo,weightIndex);
   let calculatedPrice = calculatePrice(whereToGo,weightIndex);
   let resData = calculatedPrice.toString();
@@ -68,4 +67,4 @@ app.post('/post_data', (req, res) => {
   //res.send(data)
 })
 
-app.listen(port, () => console.log(`App listening on port ${port}!`))
+app.listen(PORT, () => console.log(`App listening on port ${PORT}!`))
